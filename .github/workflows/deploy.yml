@@ -1,47 +1,33 @@
-name: Deploy to Cloudflare Workers
+name: Deploy to Cloudflare Pages
 
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x]
-
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: npm
+          node-version: 20
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Run linter
-        run: npm run lint --if-present
+      - name: Build Next.js for Pages
+        # Creates the .vercel/output/static folder
+        run: npx @cloudflare/next-on-pages
 
-      - name: Run type check
-        run: npm run type-check
-
-      - name: Run tests
-        run: npm test -- --run --reporter=verbose
-
-      - name: Build application
-        run: npm run build
-
-      - name: Deploy to Cloudflare Workers
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: cloudflare/wrangler-action@v3.11.0
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          workingDirectory: '.'
+          # Wrangler to deploy the Pages output
+          command: pages deploy .vercel/output/static --project-name=checkit-frontend-assessment
+

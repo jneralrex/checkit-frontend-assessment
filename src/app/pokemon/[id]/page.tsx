@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
+export const runtime = 'edge';
+
 
 interface PokemonDetailPageProps {
   params: Promise<{ id: string }>;

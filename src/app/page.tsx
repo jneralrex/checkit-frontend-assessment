@@ -6,6 +6,8 @@ import { Pagination } from '@/components/Pagination';
 import { PokemonListSkeleton } from '@/components/SkeletonLoader';
 import { EmptyState } from '@/components/EmptyState';
 import type { Metadata } from 'next';
+export const runtime = 'edge';
+
 
 const ITEMS_PER_PAGE = 20;
 
