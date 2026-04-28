@@ -35,7 +35,7 @@ src/
 
 ## Core Architectural Decisions
 
-### 1. **Server Components Everywhere** ✨
+### 1. **Server Components Everywhere** 
 
 **Decision**: Use async server components for all page-level components
 
@@ -57,7 +57,7 @@ export default async function Home({ searchParams }) {
 }
 ```
 
-### 2. **API Abstraction Layer** 🎯
+### 2. **API Abstraction Layer** 
 
 **Location**: `src/lib/pokemon.ts`
 
@@ -83,7 +83,7 @@ export async function getPokemonList(limit: number, offset: number) {
 }
 ```
 
-### 3. **Client-Only Search** 🔍
+### 3. **Client-Only Search** 
 
 **Location**: `src/components/SearchFilters.tsx`
 
@@ -103,7 +103,7 @@ const [query, setQuery] = useState(searchParams.get('q') || '');
 // Debounce and update URL on parent server component
 ```
 
-### 4. **Suspense Boundaries for Loading States** ⏳
+### 4. **Suspense Boundaries for Loading States** 
 
 **Location**: `src/app/page.tsx`, `src/app/pokemon/[id]/page.tsx`
 
@@ -123,7 +123,7 @@ const [query, setQuery] = useState(searchParams.get('q') || '');
 </Suspense>
 ```
 
-### 5. **Metadata Exports for SEO** 📱
+### 5. **Metadata Exports for SEO** 
 
 **Location**: `src/app/layout.tsx`, `src/app/pokemon/[id]/page.tsx`
 
@@ -149,7 +149,7 @@ export async function generateMetadata({ params }) {
 }
 ```
 
-### 6. **Tailwind-Only Styling** 🎨
+### 6. **Tailwind-Only Styling** 
 
 **Decision**: No component library (shadcn, MUI, Chakra)
 
@@ -173,7 +173,7 @@ export async function generateMetadata({ params }) {
 <div className="card p-4">...</div>
 ```
 
-### 7. **URL-Driven State** 🔗
+### 7. **URL-Driven State** 
 
 **Decision**: Use `searchParams` and `useSearchParams` for state
 
@@ -195,7 +195,7 @@ Server component re-renders with new searchParams
 New data fetched and rendered
 ```
 
-### 8. **ISR (Incremental Static Regeneration)** 🔄
+### 8. **ISR (Incremental Static Regeneration)** 
 
 **Location**: `src/lib/pokemon.ts`
 
@@ -217,7 +217,7 @@ fetch(url, {
 })
 ```
 
-### 9. **Error Boundaries & Loading States** 🛡️
+### 9. **Error Boundaries & Loading States** 
 
 **Location**: `src/app/error.tsx`, `src/app/loading.tsx`
 
@@ -318,22 +318,22 @@ If this app grew 10x:
 
 ## Trade-offs Made
 
-### ✅ Chose Pagination over Infinite Scroll
+###  Chose Pagination over Infinite Scroll
 - **Why**: Simpler implementation, clearer UX
 - **Cost**: Less novelty
 - **Justification**: Pagination performs better, more accessible
 
-### ✅ Search returns single result
+###  Search returns single result
 - **Why**: Simple PokéAPI doesn't support full-text search
 - **Cost**: Can't search across multiple results
 - **Alternative**: Would need to cache all Pokemon locally
 
-### ✅ No client-side caching
+###  No client-side caching
 - **Why**: PokéAPI already fast, ISR sufficient
 - **Cost**: Slightly larger data transfers
 - **Justification**: Added complexity not justified
 
-### ✅ No animations/transitions in UI
+###  No animations/transitions in UI
 - **Why**: Focus on core functionality
 - **Cost**: Less visual appeal
 - **Justification**: Can be added without breaking architecture

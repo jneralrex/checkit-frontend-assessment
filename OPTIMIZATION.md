@@ -244,24 +244,24 @@ npm run build
 ## Common Issues & Solutions
 
 ### Slow Image Loading
-- ✅ Using `priority` on above-fold images
-- ✅ Explicit width/height prevents layout shift
-- ✅ WebP/AVIF formats reduce size by 25-35%
+-  Using `priority` on above-fold images
+-  Explicit width/height prevents layout shift
+-  WebP/AVIF formats reduce size by 25-35%
 
 ### High Layout Shift
-- ✅ Image dimensions set
-- ✅ Fonts self-hosted (no FOUT)
-- ✅ Skeleton loaders match final content size
+-  Image dimensions set
+-  Fonts self-hosted (no FOUT)
+-  Skeleton loaders match final content size
 
 ### Large JavaScript Bundle
-- ✅ Server components reduce JS
-- ✅ Code splitting per route
-- ✅ No component library bloat
+-  Server components reduce JS
+-  Code splitting per route
+-  No component library bloat
 
 ### Slow API Calls
-- ✅ ISR with stale-while-revalidate
-- ✅ Cloudflare edge caching
-- ✅ Server-side prefetching
+-  ISR with stale-while-revalidate
+-  Cloudflare edge caching
+-  Server-side prefetching
 
 ## Benchmarks
 
@@ -272,10 +272,10 @@ npm run build
 - Size: ~450KB JS
 
 ### After Optimization
-- LCP: <2.5s ✅
-- CLS: <0.05 ✅
-- INP: <100ms ✅
-- Size: ~85KB JS ✅
+- LCP: <2.5s 
+- CLS: <0.05 
+- INP: <100ms 
+- Size: ~85KB JS 
 
 ## Further Optimization Ideas
 

@@ -2,7 +2,7 @@
 
 A high-performance content discovery application built with Next.js 14, TypeScript, and Tailwind CSS, showcasing production-grade engineering practices.
 
-## 🚀 Quick Start
+##  Quick Start
 
 ```bash
 # Clone and setup
@@ -24,9 +24,9 @@ npm run build
 
 Open [http://localhost:3000](http://localhost:3000) to see the app.
 
-## 📋 Features Implemented
+##  Features Implemented
 
-### ✅ Required Features (F-1 to F-5)
+###  Required Features (F-1 to F-5)
 
 **F-1: Listing Page**
 - SSR/ISR listing with 20 Pokémon per page using PokéAPI
@@ -57,7 +57,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the app.
 - Deployed to **Cloudflare Workers** using OpenNext adapter (preferred)
 - Live URL: [TBD after deployment]
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 src/
@@ -92,7 +92,7 @@ src/
 4. **Server Components**: Listing and detail pages use server-side data fetching for SEO and performance
 5. **Client Interactivity**: Search filters use client components with URL state management
 
-## ⚡ Performance Optimizations
+##  Performance Optimizations
 
 ### Applied Optimizations:
 
@@ -129,7 +129,7 @@ src/
 - **INP**: < 100ms (via event delegation + debounce)
 - **Lighthouse**: ≥ 90 (via all above optimizations)
 
-## 🧪 Testing
+##  Testing
 
 Comprehensive test suite using Vitest + React Testing Library:
 
@@ -140,12 +140,12 @@ npm run test -- --coverage  # Coverage report
 ```
 
 ### Test Coverage
-- ✅ **PokemonCard.tsx**: 5 test cases covering rendering, linking, and type handling
-- ✅ **EmptyState.tsx**: 4 test cases for default/custom content and accessibility
+-  **PokemonCard.tsx**: 5 test cases covering rendering, linking, and type handling
+-  **EmptyState.tsx**: 4 test cases for default/custom content and accessibility
 
 Both components achieve **100% line/branch coverage**.
 
-## 🔧 Technical Stack
+##  Technical Stack
 
 | Layer | Technology | Justification |
 |-------|-----------|---|
@@ -157,7 +157,7 @@ Both components achieve **100% line/branch coverage**.
 | **Testing** | Vitest + RTL | Fast, modern, great DX |
 | **Deployment** | Cloudflare Workers + OpenNext | Edge caching, low latency |
 
-## 🌐 Deployment
+##  Deployment
 
 ### Cloudflare Workers Setup
 
@@ -186,7 +186,7 @@ cp .env.example .env.local
 Required variables:
 - `NEXT_PUBLIC_BASE_URL`: Your deployment URL (for OG images)
 
-## 📊 Performance Metrics
+##  Performance Metrics
 
 Run Lighthouse:
 
@@ -205,14 +205,14 @@ Expected scores on live deployment:
 - **Best Practices**: 90+
 - **SEO**: 95+
 
-## 🎯 Trade-offs & Known Limitations
+##  Trade-offs & Known Limitations
 
 ### What Works Well
-✅ Fast listing page with efficient pagination  
-✅ Detailed Pokémon pages with full stats  
-✅ Smooth search experience with debounce  
-✅ Mobile-first responsive design  
-✅ Production-grade error handling  
+ Fast listing page with efficient pagination  
+ Detailed Pokémon pages with full stats  
+ Smooth search experience with debounce  
+ Mobile-first responsive design  
+ Production-grade error handling  
 
 ### Trade-offs Made
 - **No infinite scroll**: Pagination is simpler to implement and reason about
@@ -227,7 +227,7 @@ Expected scores on live deployment:
 4. **Add error recovery** with exponential backoff for failed requests
 5. **Optimize bundle size** analysis and code splitting review
 
-## 🔐 Code Quality
+##  Code Quality
 
 ```bash
 npm run type-check        # TypeScript strict mode
@@ -236,13 +236,13 @@ npm run lint              # ESLint (configured via Next.js)
 ```
 
 ### Standards
-- ✅ Strict TypeScript throughout
-- ✅ Semantic HTML with ARIA labels
-- ✅ Mobile-first responsive design
-- ✅ Clean commit history
-- ✅ Meaningful test coverage
+-  Strict TypeScript throughout
+-  Semantic HTML with ARIA labels
+-  Mobile-first responsive design
+-  Clean commit history
+-  Meaningful test coverage
 
-## 📝 Data Source
+##  Data Source
 
 **PokéAPI** (https://pokeapi.co)
 - Free, public, no authentication required
@@ -250,7 +250,7 @@ npm run lint              # ESLint (configured via Next.js)
 - Excellent documentation
 - Reliable uptime
 
-## 🚨 Troubleshooting
+## Troubleshooting
 
 **Images not loading?**
 - Check `next.config.js` remotePatterns for githubusercontent.com
@@ -262,10 +262,11 @@ npm run lint              # ESLint (configured via Next.js)
 **Slow local dev?**
 - Image optimization is automatic; for faster iteration, set `unoptimized: true` temporarily
 
-## 📞 Questions?
+##  Questions?
 
 See the [Architecture Decisions](#-architecture) section or review inline code comments for detailed rationale.
 
 ---
 
-**Built with ❤️ for the Checkit Frontend Assessment**
+**Built with for the Checkit Frontend Assessment**
+
