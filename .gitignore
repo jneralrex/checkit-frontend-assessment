@@ -1,0 +1,34 @@
+.env.local
+.env.*.local
+.DS_Store
+*.pem
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cloudflare Workers
+*.wrangler
+wrangler.toml.local
+worker/dist
