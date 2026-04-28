@@ -116,7 +116,7 @@ export default async function Home({ searchParams }: HomeProps) {
   return (
     <div>
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-slate-900 mb-4">Pokédex</h2>
+        <h2 className="text-2xl font-bold text-slate-900 mb-2">Pokédex</h2>
         <SearchFilters />
       </div>
 
